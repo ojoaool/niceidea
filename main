@@ -11,37 +11,37 @@ getgenv().Nousigi = true
 
 local DisableAnimation = game.Players.LocalPlayer.PlayerGui:FindFirstChild('TouchGui')
 local T1UIColor = {
-	["Border Color"] = Color3.fromRGB(255, 206, 27),
-	["Click Effect Color"] = Color3.fromRGB(230, 230, 230),
-	["Setting Icon Color"] = Color3.fromRGB(230, 230, 230),
+	["Border Color"] = Color3.fromRGB(255, 255, 255),
+	["Click Effect Color"] = Color3.fromRGB(255, 255, 255),
+	["Setting Icon Color"] = Color3.fromRGB(180, 180, 180),
 	["Logo Image"] = "rbxassetid://128185233852701",
-	["Search Icon Color"] = Color3.fromRGB(240, 240, 230),
-	["Search Icon Highlight Color"] = Color3.fromRGB(255, 206, 27),
-	["GUI Text Color"] = Color3.fromRGB(235, 235, 230),
-	["Text Color"] = Color3.fromRGB(235, 235, 230),
-	["Placeholder Text Color"] = Color3.fromRGB(170, 170, 160),
-	["Title Text Color"] = Color3.fromRGB(255, 206, 27),
-	["Background Main Color"] = Color3.fromRGB(18, 18, 22),
-	["Background 1 Color"] = Color3.fromRGB(28, 28, 34),
-	["Background 1 Transparency"] = 0.1,
-	["Background 2 Color"] = Color3.fromRGB(38, 38, 46),
-	["Background 3 Color"] = Color3.fromRGB(48, 48, 56),
+	["Search Icon Color"] = Color3.fromRGB(200, 200, 200),
+	["Search Icon Highlight Color"] = Color3.fromRGB(255, 255, 255),
+	["GUI Text Color"] = Color3.fromRGB(245, 245, 245),
+	["Text Color"] = Color3.fromRGB(245, 245, 245),
+	["Placeholder Text Color"] = Color3.fromRGB(120, 120, 120),
+	["Title Text Color"] = Color3.fromRGB(255, 255, 255),
+	["Background Main Color"] = Color3.fromRGB(8, 8, 8),
+	["Background 1 Color"] = Color3.fromRGB(14, 14, 14),
+	["Background 1 Transparency"] = 0.15,
+	["Background 2 Color"] = Color3.fromRGB(22, 22, 22),
+	["Background 3 Color"] = Color3.fromRGB(30, 30, 30),
 	["Background Image"] = "",
-	["Page Selected Color"] = Color3.fromRGB(255, 206, 27),
-	["Section Text Color"] = Color3.fromRGB(220, 220, 210),
-	["Section Underline Color"] = Color3.fromRGB(255, 206, 27),
-	["Toggle Border Color"] = Color3.fromRGB(255, 206, 27),
-	["Toggle Checked Color"] = Color3.fromRGB(230, 230, 230),
-	["Toggle Desc Color"] = Color3.fromRGB(185, 185, 185),
-	["Button Color"] = Color3.fromRGB(255, 206, 27),
-	["Label Color"] = Color3.fromRGB(38, 38, 42),
-	["Dropdown Icon Color"] = Color3.fromRGB(230, 230, 230),
-	["Dropdown Selected Color"] = Color3.fromRGB(255, 206, 27),
-	["Dropdown Selected Check Color"] = Color3.fromRGB(219, 177, 23),
-	["Textbox Highlight Color"] = Color3.fromRGB(255, 206, 27),
-	["Box Highlight Color"] = Color3.fromRGB(255, 206, 27),
-	["Slider Line Color"] = Color3.fromRGB(255, 206, 27),
-	["Slider Highlight Color"] = Color3.fromRGB(194, 156, 20),
+	["Page Selected Color"] = Color3.fromRGB(255, 255, 255),
+	["Section Text Color"] = Color3.fromRGB(230, 230, 230),
+	["Section Underline Color"] = Color3.fromRGB(255, 255, 255),
+	["Toggle Border Color"] = Color3.fromRGB(255, 255, 255),
+	["Toggle Checked Color"] = Color3.fromRGB(255, 255, 255),
+	["Toggle Desc Color"] = Color3.fromRGB(140, 140, 140),
+	["Button Color"] = Color3.fromRGB(255, 255, 255),
+	["Label Color"] = Color3.fromRGB(24, 24, 24),
+	["Dropdown Icon Color"] = Color3.fromRGB(200, 200, 200),
+	["Dropdown Selected Color"] = Color3.fromRGB(255, 255, 255),
+	["Dropdown Selected Check Color"] = Color3.fromRGB(200, 200, 200),
+	["Textbox Highlight Color"] = Color3.fromRGB(255, 255, 255),
+	["Box Highlight Color"] = Color3.fromRGB(255, 255, 255),
+	["Slider Line Color"] = Color3.fromRGB(255, 255, 255),
+	["Slider Highlight Color"] = Color3.fromRGB(180, 180, 180),
 	["Tween Animation 1 Speed"] = DisableAnimation and 0 or 0.25,
 	["Tween Animation 2 Speed"] = DisableAnimation and 0 or 0.5,
 	["Tween Animation 3 Speed"] = DisableAnimation and 0 or 0.1,
@@ -665,54 +665,7 @@ function Library:CreateWindow(Setting)
 	ControlTitle.TextXAlignment = Enum.TextXAlignment.Left
 	ControlTitle.TextColor3 = getgenv().UIColor["GUI Text Color"]
 
-	local PageSearch = Instance.new("Frame")
-	local PageSearchCorner = Instance.new("UICorner")
-	local SearchFrame = Instance.new("Frame")
-	local SearchIcon = Instance.new("ImageLabel")
-	local SearchBox = Instance.new("TextBox")
 
-	PageSearch.Name = "PageSearch"
-	PageSearch.Parent = PageControl
-	PageSearch.AnchorPoint = Vector2.new(1, 0)
-	PageSearch.BackgroundColor3 = Color3.fromRGB(38, 38, 46)
-	PageSearch.Position = UDim2.new(1, -5, 0, 5)
-	PageSearch.Size = UDim2.new(0, 170, 0, 25)
-	PageSearch.ClipsDescendants = true
-
-	PageSearchCorner.Parent = PageSearch
-	PageSearchCorner.CornerRadius = UDim.new(0, 4)
-
-	SearchFrame.Name = "SearchFrame"
-	SearchFrame.Parent = PageSearch
-	SearchFrame.BackgroundColor3 = Color3.fromRGB(163, 162, 165)
-	SearchFrame.BackgroundTransparency = 1
-	SearchFrame.Size = UDim2.new(0, 25, 1, 0)
-
-	SearchIcon.Name = "SearchIcon"
-	SearchIcon.Parent = SearchFrame
-	SearchIcon.AnchorPoint = Vector2.new(0.5, 0.5)
-	SearchIcon.BackgroundColor3 = Color3.fromRGB(163, 162, 165)
-	SearchIcon.BackgroundTransparency = 1
-	SearchIcon.Position = UDim2.new(0.5, 0, 0.5, 0)
-	SearchIcon.Size = UDim2.new(0, 16, 0, 16)
-	SearchIcon.Image = "rbxassetid://8154282545"
-	SearchIcon.ImageColor3 = Color3.fromRGB(240, 240, 230)
-
-    SearchBox.Name = "SearchBox"
-    SearchBox.Parent = PageSearch
-    SearchBox.Active = true
-    SearchBox.BackgroundColor3 = Color3.fromRGB(163, 162, 165)
-    SearchBox.BackgroundTransparency = 1
-    SearchBox.CursorPosition = -1
-    SearchBox.Position = UDim2.new(0, 30, 0, 0)
-    SearchBox.Size = UDim2.new(1, -30, 1, 0)
-    SearchBox.Font = Enum.Font.GothamBold
-    SearchBox.PlaceholderColor3 = Color3.fromRGB(170, 170, 160)
-    SearchBox.PlaceholderText = "Search section or Function..."
-    SearchBox.Text = ""
-    SearchBox.TextColor3 = Color3.fromRGB(235, 235, 230)
-    SearchBox.TextSize = 14
-    SearchBox.TextXAlignment = Enum.TextXAlignment.Left
 
 	MainPage.Name = "MainPage"
 	MainPage.Parent = Concacmain
@@ -874,10 +827,6 @@ function Library:CreateWindow(Setting)
         end
     end
     
-    -- Kết nối sự kiện search (giữ nguyên)
-    SearchBox:GetPropertyChangedSignal("Text"):Connect(function()
-        GlobalSearch(SearchBox.Text)
-    end)
 
 	local Main_Function = {}
 
